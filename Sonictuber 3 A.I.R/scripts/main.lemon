@@ -1,4 +1,5 @@
 include ihatecorkscrewsprites
 include discordrpc
 include fake_classic_rotation
+include dataselect_renderhook
 

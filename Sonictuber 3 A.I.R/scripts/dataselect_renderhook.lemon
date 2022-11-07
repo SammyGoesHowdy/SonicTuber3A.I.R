@@ -1,0 +1,12 @@
+function bool Standalone.onWriteToSpriteTable(s16 px, s16 py, u16 renderQueue)
+{
+    // "Data Select" Text
+    if (objA0.update_address == 0x01abc6)
+    {
+        Renderer.drawCustomSprite("big_trouble", px, py, 0x00, 0, renderQueue, 0, 255)
+        return true
+
+    }
+
+    return base.Standalone.onWriteToSpriteTable(px, py, renderQueue)
+}
