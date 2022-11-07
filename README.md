@@ -8,7 +8,7 @@ A Sonic 3 A.I.R. mod thats based off this thumbnail by the sonictuber of all tim
 
 
 # Mod Credits
-SammyGoesHowdy - Everything related to sprites
+SammyGoesHowdy - Everything related to sprites & slight coding (data select renderhooks)
 
 Chief Hydropolis - Coding
 
