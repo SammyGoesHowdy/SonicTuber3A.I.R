@@ -25,6 +25,7 @@
 	"title_screen_start":  { "File": "title_screen.png", "Rect": "0,36,140,8", "Center": "70,4" },
 	"title_screen_cr":  { "File": "title_screen.png", "Rect": "0,46,72,18", "Center": "0,0" },
 	"bg_dataselect":  { "File": "him.png", "Rect": "0,0,0,0", "Center": "0,0" },
+	"big_trouble":  { "File": "BigTrouble.png", "Center": "200,12" },
 	"ls_priorityissue":  { "File": "him.png", "Rect": "0,0,0,0", "Center": "0,0" },
 	"ls_s3c":  { "File": "him.png", "Rect": "0,0,0,0", "Center": "0,0" },
 	"ls_s3a":  { "File": "him.png", "Rect": "0,0,0,0", "Center": "0,0" },
