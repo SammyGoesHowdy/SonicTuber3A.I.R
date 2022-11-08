@@ -1,0 +1,63 @@
+global u64 UndertaleOST.DeathByGlamour.InGame.Extended
+global u64 TheCityThatDaresNotSleepSoundtrack11.FlintVS.Skunkape
+
+//# address-hook(0x003e32) end(0x004342)
+function void TitleScreen()
+{
+	kosinski.queue_size = 0
+	zeroMemory(0xffffff10, 0x6c)
+	ClearPatternLoadingQueue()
+	global.zone_act = 0
+	zeroMemory(0x003e32, 8)
+	water.fullscreen = 0
+	level.water_present = 0
+	zeroMemory(0xffffac00, 0x400)
+	zeroMemory(0xffffb000, 0x2000)
+	zeroMemory(0xfffff700, 0x100)
+	zeroMemory(0xffffee00, 0x100)
+	Renderer.resetSprites()
+	zeroMemory(0xfffffc00, 0x100)
+	checkpoint.number = 0
+	global.stage_type = 0
+	debug_mode.state = 0
+	global.rolling_demo = 0
+	u16[0xfffff634] = 0
+	competition_mode.active = 0
+	global.level_started = 0
+	debug_mode.enabled.u8 = 0
+	competition_mode.active = 0
+	u16[0xffffffe4] = 0
+	u16[0xffffffe6] = 0
+	bluespheres.minigame_mode = 0
+	u16[0xfffffb00] = 0
+	if (!Audio.isPlayingAudio(0x25))
+	{
+		UndertaleOST.DeathByGlamour.InGame.Extended = 0
+		TheCityThatDaresNotSleepSoundtrack11.FlintVS.Skunkape = 0
+		Audio.playAudio(0x25)
+	}
+	Renderer.resetSprites()
+	UpdateGameObjects()
+	waitForNextFrame()
+	Renderer.drawSprite(stringformat("middygaming_%d", UndertaleOST.DeathByGlamour.InGame.Extended), 0, 0, 0, 0, 0xA000)
+	++TheCityThatDaresNotSleepSoundtrack11.FlintVS.Skunkape
+	if (TheCityThatDaresNotSleepSoundtrack11.FlintVS.Skunkape > 11)
+	{
+		TheCityThatDaresNotSleepSoundtrack11.FlintVS.Skunkape = 0
+		++UndertaleOST.DeathByGlamour.InGame.Extended
+	}
+	if (UndertaleOST.DeathByGlamour.InGame.Extended > (66))
+	{
+		TheCityThatDaresNotSleepSoundtrack11.FlintVS.Skunkape = 0
+		UndertaleOST.DeathByGlamour.InGame.Extended = 0
+		Game.returnToMainMenu()
+		yieldExecution()
+	}
+	if (Input.buttonDown(BUTTON_X) || control.pad1 & CONTROL_START)
+	{
+		TheCityThatDaresNotSleepSoundtrack11.FlintVS.Skunkape = 0
+		UndertaleOST.DeathByGlamour.InGame.Extended = 0
+		Game.returnToMainMenu()
+		yieldExecution()
+	}
+}
