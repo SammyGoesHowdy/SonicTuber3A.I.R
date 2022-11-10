@@ -15,3 +15,5 @@ Chief Hydropolis - Coding
 3AIR Modders Resource - Fake Classic Rotation script
 
 iCloudius - Discord RPC
+
+Stardust#3715 - Thumbnail
