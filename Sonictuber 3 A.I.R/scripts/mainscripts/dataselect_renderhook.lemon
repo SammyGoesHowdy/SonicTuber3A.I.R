@@ -1,10 +1,28 @@
 function bool Standalone.onWriteToSpriteTable(s16 px, s16 py, u16 renderQueue)
 {
-    // "Data Select" Text
-    if (objA0.update_address == 0x01abc6)
+    // "Data Select" text
+    if (objA0.update_address == 0x01abc6) && (objA0.mapping_offset == 0x00ce0e)
     {
         Renderer.drawCustomSprite("big_trouble", px, py, 0x00, 0, renderQueue, 0, 255)
         return true
+
+    }
+
+    return base.Standalone.onWriteToSpriteTable(px, py, renderQueue)
+}
+
+function bool Standalone.onWriteToSpriteTable(s16 px, s16 py, u16 renderQueue)
+{
+    // Competition menu sprites
+    if (objA0.update_address == 0x0b656)
+    {
+        if (objA0.animation.sprite == 0)
+        {
+            u64 key = stringformat("comp_0", objA0.animation.sprite)
+
+            Renderer.drawCustomSprite(key, objA0.animation.sprite, px, py, 0, renderQueue, 0, 255)
+            return true
+        }    
 
     }
 
